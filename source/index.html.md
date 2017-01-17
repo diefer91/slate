@@ -1,12 +1,6 @@
 ---
 title: API Reference
 
-language_tabs:
-  - shell
-  - ruby
-  - python
-  - javascript
-
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
@@ -19,171 +13,301 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
-
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+Welcome to the Pets Social API! Use this API to access all the endpoints for the Pets Social iOS and Android App. 
 
 This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
 
 # Authentication
 
-> To authorize, use this code:
+Pets Social uses an API Key to allow access to the endpoints. If you don't have an API Key, please contact the administrator to request one.
 
-```ruby
-require 'kittn'
+Pets Social expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
+`apikey: woofwoofwoof`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>woofwoofwoof</code> with the app API Key.
 </aside>
 
-# Kittens
+Almost all of the Pets Social endpoints require an authenticated user. This information must be provided in a header that looks like the following:
 
-## Get All Kittens
+`cookie: vapor-auth=asdjasldjasjdvjdnjg==`
 
-```ruby
-require 'kittn'
+This cookie will be sent to the client in the header `set-cookie` in the response of the `login` endpoint.
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
 
-```python
-import kittn
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
+Some endpoints require admin authentication (These endpoints are not used by the iOS nor Android clients). In this case, the information should be sent in a header that looks like the following:
 
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
+`admin: diegovidal`
+`pass: abcd1234`
 
-```javascript
-const kittn = require('kittn');
+# Users 
 
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
+## Create User
 
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
+> Create User JSON Response (201 - Created):
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+    "user": {
+        "createdat": "2017-01-17 13:51:44",
+        "email": "diefer_2@hotmail.com",
+        "enabled": true,
+        "followerscount": 0,
+        "followingids": null,
+        "id": 6,
+        "likedpostsids": null,
+        "name": "Ferch Illera",
+        "photourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
+        "thumbnailphotourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
+        "updatedat": "2017-01-17 13:51:44",
+        "username": "diefer1"
+    }
 }
 ```
 
-This endpoint retrieves a specific kitten.
+> Create User JSON Response (400 - Bad Request): 
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+```json
+{
+    "error": 
+    {
+        "code": "user-create-1",
+        "message": "Invalid Name",
+        "description": "Names must have only alphabetic characters and have between 3 and 64 characters"
+    }
+}
+```
+
+> Create User JSON Response (500 - Internal Server Error):
+
+```json
+{
+    "error": {
+        "code": "user-create-5",
+        "description": "A server error ocurred when trying to save the user in the database: The operation could not be completed. (PostgreSQL.DatabaseError error 1.)",
+        "message": "Server error"
+    }
+}
+```
+
+This endpoint creates a new user. 
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`POST https://petssocialdev.herokuapp.com/v1/users`
 
-### URL Parameters
+### Body Parameters
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
+Parameter | Example | Description
+--------- | ------- | -----------
+name | Diego Vidal | Only alphabetic characters. Between 3 - 64 characters long.
+email | diego@test.com | Must be a valid email. Between 6 - 64 characters long.
+password | Abcd1234 | Require one numeric and one uppercase character. Between 3 - 18 characters long.
+username | diego10 | Must contain only letters, numbers, and _-. Between 3 - 18 characters long.
+
+<aside class="success">
+If everything is ok, a new user must be created!
+</aside>
+
+## Login User
+
+> Login User JSON Response (200 - Ok): 
+
+```json
+{
+    "user": {
+        "createdat": "2017-01-17 11:58:06",
+        "email": "diefer_1@hotmail.com",
+        "enabled": true,
+        "followerscount": 0,
+        "followingids": [
+
+        ],
+        "id": 1,
+        "likedpostsids": [
+
+        ],
+        "name": "Ferch Illera",
+        "photourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
+        "thumbnailphotourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
+        "updatedat": "2017-01-17 11:58:06",
+        "username": "diefer3"
+    }
+}
+```
+
+> Login User JSON Response (404 - Not Found):
+
+```json
+{
+    "code": 404,
+    "error": true,
+    "message": "No user found with those credentials",
+    "metadata": null
+}
+```
+
+> Login User JSON Response (400 - Bad Request):
+
+```json
+{
+    "error": {
+        "code": "user-login-1",
+        "description": "Please provide an email",
+        "message": "Invalid login credentials"
+    }
+}
+```
+
+This endpoint logs in the user.
+
+### HTTP Request
+
+`POST https://petssocialdev.herokuapp.com/v1/users/login`
+
+### Body Parameters
+
+Parameter | Example | Description
+--------- | ------- | -----------
+email | diefer10 | Can be the email or the username of the user.
+password | Abcd1234 | the password of the user.
+
+### HTTP Response Headers
+
+When the login is successfull, a cookie will be returned to the client in the response headers, it looks like the following: 
+
+`set-cookie: vapor-auth=sdiwjdjndcwwo==`
+
+<aside class="notice">
+THE CLIENT MUST SEND THIS COOKIE IN ALL THE NEXT REQUESTS IT MADES, AS DISCUSSED IN THE AUTHENTICATION SECTION OF THE DOCS!
+</aside>
+
+##Logout User
+
+> Logout User JSON Response (200 - Ok): 
+
+```json
+{
+    "message": "Logout Successfull"
+}
+```
+
+This endpoint logs out the user. 
+
+### HTTP Request
+
+`POST https://petssocialdev.herokuapp.com/v1/users/logout`
+
+
+##Get User 
+
+> Get User JSON Response (200 - OK):
+
+```json
+{
+    "user": {
+        "createdat": "2017-01-17 11:58:06",
+        "email": "diefer_1@hotmail.com",
+        "enabled": true,
+        "followerscount": 0,
+        "followingids": [
+
+        ],
+        "id": 1,
+        "likedpostsids": [
+
+        ],
+        "name": "Ferch Illera",
+        "photourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
+        "thumbnailphotourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
+        "updatedat": "2017-01-17 11:58:06",
+        "username": "diefer3"
+    }
+}
+```
+
+> Get User JSON Response (404 - Not Found): 
+
+```json
+{
+    "error": {
+        "code": "get-user-1",
+        "description": "Could not find a user with the specified id",
+        "message": "No user found"
+    }
+}
+```
+
+This endpoint gets a user by its id 
+
+### HTTP Request 
+
+`GET https://petssocialdev.herokuapp.com/v1/users/:id`
+
+### URL Parameters 
+
+Parameter | Example | Description
+--------- | ------- | -----------
+id | 12 | The id of the user
+
+##Search Users 
+
+> Search Users JSON Response (200 - Ok):
+
+```json
+{
+    "users": [{
+        "createdat": "2017-01-17 11:58:06",
+        "email": "diefer_1@hotmail.com",
+        "enabled": true,
+        "followerscount": 0,
+        "followingids": [
+
+        ],
+        "id": 1,
+        "likedpostsids": [
+
+        ],
+        "name": "Ferch Illera",
+        "photourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
+        "thumbnailphotourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
+        "updatedat": "2017-01-17 11:58:06",
+        "username": "diefer3"
+    },
+    {
+        "createdat": "2017-01-17 11:58:06",
+        "email": "diefer_1@hotmail.com",
+        "enabled": true,
+        "followerscount": 0,
+        "followingids": [
+
+        ],
+        "id": 1,
+        "likedpostsids": [
+
+        ],
+        "name": "Ferch Illera",
+        "photourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
+        "thumbnailphotourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
+        "updatedat": "2017-01-17 11:58:06",
+        "username": "diefer3"
+    }]
+}
+```
+
+This endpoint allows to search and filter users. 
+
+### HTTP Request 
+
+`GET https://petssocialdev.herokuapp.com/v1/users/search`
+
+### Query Parameters 
+
+Parameter | Example | Description
+--------- | ------- | -----------
+count | 20 | The numbers of items to be retrieved 
+offset | 10 | The item from which the results are going to be sent
+username | diefer1 | the username to use as a filter
 
