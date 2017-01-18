@@ -6,6 +6,7 @@ toc_footers:
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
+  - posts
   - errors
 
 search: true
@@ -251,6 +252,46 @@ This endpoint gets a user by its id
 Parameter | Example | Description
 --------- | ------- | -----------
 id | 12 | The id of the user
+
+##Update Users 
+
+> Update User JSON Response (200 - Ok): 
+
+```json
+{
+    "user": {
+        "createdat": "2017-01-17 11:58:06",
+        "email": "diefer_1@hotmail.com",
+        "enabled": true,
+        "followerscount": 0,
+        "followingids": [
+
+        ],
+        "id": 1,
+        "likedpostsids": [
+
+        ],
+        "name": "Ferch Illera",
+        "photourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
+        "thumbnailphotourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
+        "updatedat": "2017-01-17 11:58:06",
+        "username": "diefer3"
+    }
+}
+    
+```
+
+This endpoint allows to update the user information. For now, only updating the name is supported.
+
+### HTTP Request
+
+`PUT https://petssocialdev.herokuapp.com/v1/users`
+
+### Body Parameters 
+
+Parameter | Example | Description
+--------- | ------- | -----------
+name | diego vidal | The updated name of the user
 
 ##Search Users 
 
