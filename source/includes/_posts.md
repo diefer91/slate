@@ -266,6 +266,121 @@ id | 12 | The id of the post
 
 
 
+##Get Main Feed 
+
+> Get Main Feed JSON Response (200 - Success):
+
+```json
+{
+    "posts": [{
+        "averageImageColor": [
+            0,
+            0,
+            255
+        ],
+        "commentersCount": 0,
+        "createdat": "2017-01-18 01:24:40",
+        "description": "desss",
+        "enabled": true,
+        "hashtags": [
+            "#pomerania",
+            "#labrador"
+        ],
+        "id": 3,
+        "imageUrl": "http:\/\/www.car-brand-names.com\/wp-content\/uploads\/2015\/04\/BMW-logo-2.jpg",
+        "likersCount": 0,
+        "thumbnailImageUrl": "http:\/\/www.car-brand-names.com\/wp-content\/uploads\/2015\/04\/BMW-logo-2.jpg",
+        "type": "photo",
+        "updatedat": "2017-01-18 01:24:40",
+        "user_id": {
+            "id": 10,
+            "name": "Diego Vidal",
+            "thumgnailphotourl": "http://www.google.com/image1.jpg"
+        }
+    }, 
+    { 
+        ...
+    }
+    ]
+}
+```
+
+This endpoint retrieves the main feed for the user (Posts from people he is following and his own posts)
+
+### HTTP Request 
+
+`GET http://petssocialdev.herokuapp.com/v1/posts/mainfeed`
+
+### Query Parameters 
+
+Parameter | Example | Description
+--------- | ------- | -----------
+count | 30 | The number of posts to be retrieved
+offset | 100 | The post position from where the query will return posts 
+
+
+
+
+
+
+
+##Search Posts 
+
+> Search Post JSON Response (200 - Ok): 
+
+```json
+{
+    "posts": [{
+        "averageImageColor": [
+            0,
+            0,
+            255
+        ],
+        "commentersCount": 0,
+        "createdat": "2017-01-18 01:24:40",
+        "description": "desss",
+        "enabled": true,
+        "hashtags": [
+            "#pomerania",
+            "#labrador"
+        ],
+        "id": 3,
+        "imageUrl": "http:\/\/www.car-brand-names.com\/wp-content\/uploads\/2015\/04\/BMW-logo-2.jpg",
+        "likersCount": 0,
+        "thumbnailImageUrl": "http:\/\/www.car-brand-names.com\/wp-content\/uploads\/2015\/04\/BMW-logo-2.jpg",
+        "type": "photo",
+        "updatedat": "2017-01-18 01:24:40",
+        "user_id": {
+            "id": 10,
+            "name": "Diego Vidal",
+            "thumgnailphotourl": "http://www.google.com/image1.jpg"
+        }
+    }, 
+    { 
+        ...
+    }
+    ]
+}
+```
+
+This endpoints allows to search for posts, can be filtered by hashtag. 
+
+### HTTP Request 
+
+`GET http://petssocialdev.herokuapp.com/v1/posts/search`
+
+### Query Parameters 
+
+Parameter | Example | Description
+--------- | ------- | -----------
+count | 30 | The number of posts to be retrieved
+offset | 100 | The post position from where the query will return posts 
+hashtag | labrador | The hashtag to be used as a filter 
+
+
+
+
+
 
 
 

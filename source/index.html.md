@@ -7,6 +7,7 @@ toc_footers:
 
 includes:
   - posts
+  - activities
   - errors
 
 search: true
