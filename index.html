@@ -816,6 +816,458 @@ so this endpoint sets the <code class="prettyprint">enable</code> flag of the po
 </tr>
 </tbody></table>
 
+<h2 id="get-main-feed">Get Main Feed</h2>
+
+<blockquote>
+<p>Get Main Feed JSON Response (200 - Success):</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"posts"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nt">"averageImageColor"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="mi">255</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nt">"commentersCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"createdat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-18 01:24:40"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"desss"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"hashtags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"#pomerania"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"#labrador"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"imageUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:\/\/www.car-brand-names.com\/wp-content\/uploads\/2015\/04\/BMW-logo-2.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"likersCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"thumbnailImageUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:\/\/www.car-brand-names.com\/wp-content\/uploads\/2015\/04\/BMW-logo-2.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"photo"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"updatedat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-18 01:24:40"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Diego Vidal"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"thumgnailphotourl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.google.com/image1.jpg"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w"> 
+    </span><span class="p">{</span><span class="w"> 
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves the main feed for the user (Posts from people he is following and his own posts)</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://petssocialdev.herokuapp.com/v1/posts/mainfeed</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>count</td>
+<td>30</td>
+<td>The number of posts to be retrieved</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>100</td>
+<td>The post position from where the query will return posts</td>
+</tr>
+</tbody></table>
+
+<h2 id="search-posts">Search Posts</h2>
+
+<blockquote>
+<p>Search Post JSON Response (200 - Ok): </p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"posts"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nt">"averageImageColor"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="mi">255</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nt">"commentersCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"createdat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-18 01:24:40"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"desss"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"hashtags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"#pomerania"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"#labrador"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"imageUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:\/\/www.car-brand-names.com\/wp-content\/uploads\/2015\/04\/BMW-logo-2.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"likersCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"thumbnailImageUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:\/\/www.car-brand-names.com\/wp-content\/uploads\/2015\/04\/BMW-logo-2.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"photo"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"updatedat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-18 01:24:40"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Diego Vidal"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"thumgnailphotourl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.google.com/image1.jpg"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w"> 
+    </span><span class="p">{</span><span class="w"> 
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoints allows to search for posts, can be filtered by hashtag. </p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://petssocialdev.herokuapp.com/v1/posts/search</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>count</td>
+<td>30</td>
+<td>The number of posts to be retrieved</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>100</td>
+<td>The post position from where the query will return posts</td>
+</tr>
+<tr>
+<td>hashtag</td>
+<td>labrador</td>
+<td>The hashtag to be used as a filter</td>
+</tr>
+</tbody></table>
+
+          <h1 id="activities">Activities</h1>
+
+<h2 id="create-activity">Create Activity</h2>
+
+<blockquote>
+<p>Create Activity JSON Response (201 - Created): </p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Activity created successfully"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allows to create an activity (like, follow or comment)</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST http://petssocialdev.herokuapp.com/v1/activities</code></p>
+
+<h3 id="body-parameters">Body Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>touser</td>
+<td>4</td>
+<td>The id of user you are interacting with.</td>
+</tr>
+<tr>
+<td>type</td>
+<td>like</td>
+<td>the type of interaction (can be like, follow or comment)</td>
+</tr>
+<tr>
+<td>post</td>
+<td>3</td>
+<td>the id of the post you are interacting with (NOT APPLICABLE TO &lsquo;FOLLOW&rsquo; ACTIVITIES)</td>
+</tr>
+<tr>
+<td>content</td>
+<td> Your dog is so pretty!</td>
+<td>The comment made on the post (ONLY APPLICABLE TO &#39;COMMENT&rsquo; ACTIVITIES)</td>
+</tr>
+</tbody></table>
+
+<h2 id="unfollow-user">Unfollow User</h2>
+
+<blockquote>
+<p>Unfollow User JSON Response (200 - Ok): </p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User unfollowed successsfully"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Unfollow User JSON Response (404 - Not Found): </p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unfollow-user-1"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Not found"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A user with the specified id could not be found"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allows to unfollow a specific user </p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">DELETE http://petssocialdev.herokuapp.com/v1/activities/unfollow/:id</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>4</td>
+<td>The id of user you want to unfollow</td>
+</tr>
+</tbody></table>
+
+<h2 id="unlike-post">Unlike Post</h2>
+
+<blockquote>
+<p>Unlike Post JSON Response (200 - Ok):</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Post unliked successfully"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Unlike Post JSON Response (404 - Not Found): </p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unlike-post-1"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Not found"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A post with the specified id could not be found"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allows to unlike a specific post </p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">DELETE http://petssocialdev.herokuapp.com/v1/activities/unlike/:id</code></p>
+
+<h3 id="url-paramaters">URL Paramaters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>3</td>
+<td>the id of the post you want to unlike</td>
+</tr>
+</tbody></table>
+
+<h2 id="delete-comment">Delete Comment</h2>
+
+<blockquote>
+<p>Delete Comment JSON Response (200 - Ok): </p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Comment deleted successfully"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Delete Comment JSON Response (404 - Not Found):</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"delete-comment-1"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Not found"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A comment with the specified id could not be found"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>this endpoint allows to delete a comment </p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">DELETE http://petssocialdev.herokuapp.com/v1/activities/uncomment/:id</code></p>
+
+<h3 id="url-paramaters">URL Paramaters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>3</td>
+<td>the id of the comment you want to delete</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-activities-for-post">Get Activities for Post</h2>
+
+<blockquote>
+<p>Get Activities for Post JSON Response (200 - Ok):</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"activities"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nt">"content"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"createdat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-19 13:24:33"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"fromuser"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"thumbnailphotourl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.google.com/image1.jpg"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Diego Vidal"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"post"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"touser"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"follow"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"updatedat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-19 13:24:33"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Get Activities for Post JSON Response (400 - Bad Request):</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"get-activities-1"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wrong activity type"</span><span class="p">,</span><span class="w"> 
+        </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The supported activity types are like, follow and comment"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allows to get the activities related to a specific post (For example, if you want to get the likers or comments for a post)</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://petssocialdev.herokuapp.com/v1/activities/forpost/:id</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>3</td>
+<td>the id of the post</td>
+</tr>
+</tbody></table>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>count</td>
+<td>20</td>
+<td>The number of activities to be retrieved</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>30</td>
+<td>The activity position from where the new activities will be retrieved</td>
+</tr>
+<tr>
+<td>type</td>
+<td>like</td>
+<td>The type of activities to be retrieved (like, comment, follow)</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-activity-feed">Get Activity Feed</h2>
+
+<blockquote>
+<p>Get Activity Feed JSON Response (200 - Ok):</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"activities"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nt">"content"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"createdat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-19 13:24:33"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"fromuser"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"thumbnailphotourl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.google.com/image1.jpg"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Diego Vidal"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"post"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"thumbnailimageurl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.google.com/image1.jpg"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nt">"touser"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"follow"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"updatedat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-19 13:24:33"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoints retrieves the activity feed for the user </p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://petssocialdev.herokuapp.com/v1/activities/feed</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>count</td>
+<td>20</td>
+<td>The number of activities to be retrieved</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>30</td>
+<td>The activity position from where the new activities will be retrieved</td>
+</tr>
+</tbody></table>
+
           <h1 id="errors">Errors</h1>
 
 <aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files&hellip;just save them to the `includes` folder and add them to the top of your `index.md`&rsquo;s frontmatter. Files are included in the order listed.</aside>
