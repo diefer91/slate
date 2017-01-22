@@ -14,7 +14,7 @@ This endpoint allows to create an activity (like, follow or comment)
 
 ### HTTP Request 
 
-`POST http://petssocialdev.herokuapp.com/v1/activities`
+`POST https://petssocialdev.herokuapp.com/v1/activities`
 
 ### Body Parameters 
 
@@ -60,7 +60,7 @@ This endpoint allows to unfollow a specific user
 
 ### HTTP Request 
 
-`DELETE http://petssocialdev.herokuapp.com/v1/activities/unfollow/:id`
+`DELETE https://petssocialdev.herokuapp.com/v1/activities/unfollow/:id`
 
 ### URL Parameters 
 
@@ -102,7 +102,7 @@ This endpoint allows to unlike a specific post
 
 ### HTTP Request 
 
-`DELETE http://petssocialdev.herokuapp.com/v1/activities/unlike/:id`
+`DELETE https://petssocialdev.herokuapp.com/v1/activities/unlike/:id`
 
 ### URL Paramaters 
 
@@ -202,7 +202,7 @@ This endpoint allows to get the activities related to a specific post (For examp
 
 ### HTTP Request 
 
-`GET http://petssocialdev.herokuapp.com/v1/activities/forpost/:id`
+`GET https://petssocialdev.herokuapp.com/v1/activities/forpost/:id`
 
 ### URL Parameters 
 
@@ -260,7 +260,7 @@ This endpoints retrieves the activity feed for the user
 
 ### HTTP Request 
 
-`GET http://petssocialdev.herokuapp.com/v1/activities/feed`
+`GET https://petssocialdev.herokuapp.com/v1/activities/feed`
 
 ### Query Parameters 
 
@@ -268,6 +268,102 @@ Parameter | Example | Description
 --------- | ------- | -----------
 count | 20 | The number of activities to be retrieved 
 offset | 30 | The activity position from where the new activities will be retrieved 
+
+
+
+
+
+
+
+
+
+
+
+##Get Followers
+
+> Get Followers JSON Response (200 - Ok):
+
+```json
+{
+    "users": [{
+        "id": 6,
+        "name": "Ferch Illera",
+        "thumbnailphotourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
+        "username": "diefer5"
+    },
+    {
+        ...
+    }
+    ]
+}
+```
+
+This endpoint allows to get the followers of a specific user
+
+### HTTP Request 
+
+`GET https://petssocial.herokuapp.com/v1/activities/followers/:id`
+
+### Url Parameters 
+
+Parameter | Example | Description
+--------- | ------- | -----------
+id | 2 | The id of the user who we want to get the followers
+
+### Query Parameters 
+
+Parameter | Example | Description
+--------- | ------- | -----------
+count | 20 | The number of users to be retrieved 
+offset | 30 | The user position from where the new users will be retrieved 
+
+
+
+
+
+
+
+
+
+
+##Get Following 
+
+```json
+{
+    "users": [{
+        "id": 6,
+        "name": "Ferch Illera",
+        "thumbnailphotourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
+        "username": "diefer5"
+    },
+    {
+        ...
+    }
+    ]
+}
+```
+
+This endpoint allows to get the following users of a specific users 
+
+### HTTP Request 
+
+`GET https://petssocial.herokuapp.com/v1/activities/following/:id`
+
+### Url Parameters 
+
+Parameter | Example | Description
+--------- | ------- | -----------
+id | 2 | The id of the user who we want to get the following users
+
+### Query Parameters 
+
+Parameter | Example | Description
+--------- | ------- | -----------
+count | 20 | The number of users to be retrieved 
+offset | 30 | The user position from where the new users will be retrieved 
+
+
+
 
 
 

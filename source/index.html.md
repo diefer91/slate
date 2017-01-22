@@ -104,10 +104,12 @@ This endpoint creates a new user.
 
 Parameter | Example | Description
 --------- | ------- | -----------
-name | Diego Vidal | Only alphabetic characters. Between 3 - 64 characters long.
-email | diego@test.com | Must be a valid email. Between 6 - 64 characters long.
-password | Abcd1234 | Require one numeric and one uppercase character. Between 3 - 18 characters long.
-username | diego10 | Must contain only letters, numbers, and _-. Between 3 - 18 characters long.
+name (r)| Diego Vidal | Only alphabetic characters. Between 3 - 64 characters long.
+email (r)| diego@test.com | Must be a valid email. Between 6 - 64 characters long.
+password (r)| Abcd1234 | Require one numeric and one uppercase character. Between 3 - 18 characters long.
+username (r)| diego10 | Must contain only letters, numbers, and _-. Between 3 - 18 characters long.
+photourl | ....... | the url of the photo 
+thumbnailphotourl | ........ | the url of the thumbnail photo
 
 <aside class="success">
 If everything is ok, a new user must be created!
