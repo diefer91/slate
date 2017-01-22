@@ -206,24 +206,34 @@ You must replace <code>woofwoofwoof</code> with the app API Key.
 </tr>
 </thead><tbody>
 <tr>
-<td>name</td>
+<td>name &reg;</td>
 <td>Diego Vidal</td>
 <td>Only alphabetic characters. Between 3 - 64 characters long.</td>
 </tr>
 <tr>
-<td>email</td>
+<td>email &reg;</td>
 <td>diego@test.com</td>
 <td>Must be a valid email. Between 6 - 64 characters long.</td>
 </tr>
 <tr>
-<td>password</td>
+<td>password &reg;</td>
 <td>Abcd1234</td>
 <td>Require one numeric and one uppercase character. Between 3 - 18 characters long.</td>
 </tr>
 <tr>
-<td>username</td>
+<td>username &reg;</td>
 <td>diego10</td>
 <td>Must contain only letters, numbers, and _-. Between 3 - 18 characters long.</td>
+</tr>
+<tr>
+<td>photourl</td>
+<td>&hellip;&hellip;.</td>
+<td>the url of the photo</td>
+</tr>
+<tr>
+<td>thumbnailphotourl</td>
+<td>&hellip;&hellip;..</td>
+<td>the url of the thumbnail photo</td>
 </tr>
 </tbody></table>
 
@@ -435,6 +445,53 @@ THE CLIENT MUST SEND THIS COOKIE IN ALL THE NEXT REQUESTS IT MADES, AS DISCUSSED
 <td>name</td>
 <td>diego vidal</td>
 <td>The updated name of the user</td>
+</tr>
+</tbody></table>
+
+<h2 id="change-password">Change Password</h2>
+
+<blockquote>
+<p>Change Password JSON Response (200 - Ok): </p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"password updated successfully"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Change Password JSON Response (400 - Bad Request):</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"change-pass-4"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid data"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The passwords provided are invalid"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allows to change the user&rsquo;s password </p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST https://petssocialdev.herokuapp.com/v1/users/changepassword</code></p>
+
+<h3 id="body-parameters">Body Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>oldpassword</td>
+<td>Abcd1234</td>
+<td>The actual password of the user</td>
+</tr>
+<tr>
+<td>newpassword</td>
+<td>Dfghj5893</td>
+<td>The new password of the user</td>
 </tr>
 </tbody></table>
 
@@ -966,7 +1023,7 @@ so this endpoint sets the <code class="prettyprint">enable</code> flag of the po
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://petssocialdev.herokuapp.com/v1/activities</code></p>
+<p><code class="prettyprint">POST https://petssocialdev.herokuapp.com/v1/activities</code></p>
 
 <h3 id="body-parameters">Body Parameters</h3>
 
@@ -1023,7 +1080,7 @@ so this endpoint sets the <code class="prettyprint">enable</code> flag of the po
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">DELETE http://petssocialdev.herokuapp.com/v1/activities/unfollow/:id</code></p>
+<p><code class="prettyprint">DELETE https://petssocialdev.herokuapp.com/v1/activities/unfollow/:id</code></p>
 
 <h3 id="url-parameters">URL Parameters</h3>
 
@@ -1065,7 +1122,7 @@ so this endpoint sets the <code class="prettyprint">enable</code> flag of the po
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">DELETE http://petssocialdev.herokuapp.com/v1/activities/unlike/:id</code></p>
+<p><code class="prettyprint">DELETE https://petssocialdev.herokuapp.com/v1/activities/unlike/:id</code></p>
 
 <h3 id="url-paramaters">URL Paramaters</h3>
 
@@ -1167,7 +1224,7 @@ so this endpoint sets the <code class="prettyprint">enable</code> flag of the po
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://petssocialdev.herokuapp.com/v1/activities/forpost/:id</code></p>
+<p><code class="prettyprint">GET https://petssocialdev.herokuapp.com/v1/activities/forpost/:id</code></p>
 
 <h3 id="url-parameters">URL Parameters</h3>
 
@@ -1245,7 +1302,7 @@ so this endpoint sets the <code class="prettyprint">enable</code> flag of the po
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://petssocialdev.herokuapp.com/v1/activities/feed</code></p>
+<p><code class="prettyprint">GET https://petssocialdev.herokuapp.com/v1/activities/feed</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1267,6 +1324,156 @@ so this endpoint sets the <code class="prettyprint">enable</code> flag of the po
 <td>The activity position from where the new activities will be retrieved</td>
 </tr>
 </tbody></table>
+
+<h2 id="get-followers">Get Followers</h2>
+
+<blockquote>
+<p>Get Followers JSON Response (200 - Ok):</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ferch Illera"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"thumbnailphotourl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"diefer5"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allows to get the followers of a specific user</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://petssocial.herokuapp.com/v1/activities/followers/:id</code></p>
+
+<h3 id="url-parameters">Url Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>2</td>
+<td>The id of the user who we want to get the followers</td>
+</tr>
+</tbody></table>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>count</td>
+<td>20</td>
+<td>The number of users to be retrieved</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>30</td>
+<td>The user position from where the new users will be retrieved</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-following">Get Following</h2>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ferch Illera"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"thumbnailphotourl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"diefer5"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allows to get the following users of a specific users </p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://petssocial.herokuapp.com/v1/activities/following/:id</code></p>
+
+<h3 id="url-parameters">Url Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>2</td>
+<td>The id of the user who we want to get the following users</td>
+</tr>
+</tbody></table>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>count</td>
+<td>20</td>
+<td>The number of users to be retrieved</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>30</td>
+<td>The user position from where the new users will be retrieved</td>
+</tr>
+</tbody></table>
+
+          <h1 id="main-adds">Main Adds</h1>
+
+<h2 id="get-main-adds">Get Main Adds</h2>
+
+<blockquote>
+<p>Get Main Adds JSON Response (200 - Ok):</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"mainadds"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nt">"createdat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-22 16:49:15"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"imageurl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:\/\/www.carlogos.org\/logo\/Jaguar-logo.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"link"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"orderpriority"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"postid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Holaaa"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"updatedat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-22 16:49:15"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"userid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allows to get the main adds to be displayed in the app </p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://petssocialdev.herokuapp.com/v1/us</code></p>
 
           <h1 id="http-status-codes">HTTP Status Codes</h1>
 
