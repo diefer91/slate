@@ -8,6 +8,7 @@ toc_footers:
 includes:
   - posts
   - activities
+  - mainadds
   - errors
 
 search: true
@@ -115,6 +116,15 @@ thumbnailphotourl | ........ | the url of the thumbnail photo
 If everything is ok, a new user must be created!
 </aside>
 
+
+
+
+
+
+
+
+
+
 ## Login User
 
 > Login User JSON Response (200 - Ok): 
@@ -203,6 +213,15 @@ This endpoint logs out the user.
 ### HTTP Request
 
 `POST https://petssocialdev.herokuapp.com/v1/users/logout`
+
+
+
+
+
+
+
+
+
 
 
 ##Get User 
@@ -295,6 +314,53 @@ This endpoint allows to update the user information. For now, only updating the 
 Parameter | Example | Description
 --------- | ------- | -----------
 name | diego vidal | The updated name of the user
+
+
+
+
+
+
+
+
+##Change Password 
+
+> Change Password JSON Response (200 - Ok): 
+
+```json
+{ 
+    "message": "password updated successfully"
+}
+```
+
+> Change Password JSON Response (400 - Bad Request):
+
+```json
+{
+    "error": {
+        "code": "change-pass-4",
+        "message": "Invalid data",
+        "description": "The passwords provided are invalid"
+    }
+}
+```
+
+This endpoint allows to change the user's password 
+
+### HTTP Request 
+
+`POST https://petssocialdev.herokuapp.com/v1/users/changepassword`
+
+### Body Parameters 
+
+Parameter | Example | Description
+--------- | ------- | -----------
+oldpassword | Abcd1234 | The actual password of the user 
+newpassword | Dfghj5893 | The new password of the user 
+
+
+
+
+
 
 ##Search Users 
 
