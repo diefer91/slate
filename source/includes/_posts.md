@@ -47,7 +47,7 @@ This endpoint allows to create a post
 
 ### HTTP Request 
 
-`POST http://petssocialdev.herokuapp.com/v1/posts`
+`POST http://endpoint/v1/posts`
 
 ### Body parameter 
 
@@ -113,7 +113,7 @@ This endpoint allows to get a post by its id
 
 ### HTTP Request
 
-`GET http://petssocialdev.herokuapp.com/v1/posts/:id`
+`GET http://endpoint/v1/posts/:id`
 
 ### URL Parameters 
 
@@ -187,7 +187,7 @@ This endpoint allows to update the post (Only the description and hashtags field
 
 ### HTTP Request
 
-`PUT http://petssocialdev.herokuapp.com/v1/posts/:id`
+`PUT http://endpoint/v1/posts/:id`
 
 ### URL Parameters 
 
@@ -251,7 +251,7 @@ so this endpoint sets the `enable` flag of the post to `false`
 
 ### HTTP Request 
 
-`PUT http://petssocialdev.herokuapp.com/v1/posts/:id/disable`
+`PUT http://endpoint/v1/posts/:id/disable`
 
 ### URL Parameters 
 
@@ -309,7 +309,7 @@ This endpoint retrieves the main feed for the user (Posts from people he is foll
 
 ### HTTP Request 
 
-`GET http://petssocialdev.herokuapp.com/v1/posts/mainfeed`
+`GET http://endpoint/v1/posts/mainfeed`
 
 ### Query Parameters 
 
@@ -367,7 +367,7 @@ This endpoints allows to search for posts, can be filtered by hashtag.
 
 ### HTTP Request 
 
-`GET http://petssocialdev.herokuapp.com/v1/posts/search`
+`GET http://endpoint/v1/posts/search`
 
 ### Query Parameters 
 

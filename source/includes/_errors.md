@@ -18,3 +18,7 @@ Client Error Code | Meaning
 Server Error Code | Meaning
 ---------- | -------
 500 | Internal Server Error -- There was a problem with the server. 
+
+<aside class="notice">
+IMPORTANT! EVERY WEB SERVICE CAN RETURN A '500 - INTERNAL SERVER ERROR'
+</aside>

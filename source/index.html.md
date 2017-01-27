@@ -1,5 +1,5 @@
 ---
-title: API Reference
+title: Pets Social iOS & Android Clients API Reference
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
@@ -7,14 +7,16 @@ toc_footers:
 
 includes:
   - posts
-  - activities
+  - likes
+  - follows
+  - comments
   - mainadds
   - errors
 
 search: true
 ---
 
-# Introduction
+# Pets Social iOS & Android API Reference
 
 Welcome to the Pets Social API! Use this API to access all the endpoints for the Pets Social iOS and Android App. 
 
@@ -37,13 +39,6 @@ Almost all of the Pets Social endpoints require an authenticated user. This info
 `cookie: vapor-auth=asdjasldjasjdvjdnjg==`
 
 This cookie will be sent to the client in the header `set-cookie` in the response of the `login` endpoint.
-
-
-
-Some endpoints require admin authentication (These endpoints are not used by the iOS nor Android clients). In this case, the information should be sent in a header that looks like the following:
-
-`admin: diegovidal`
-`pass: abcd1234`
 
 # Users 
 
@@ -99,7 +94,7 @@ This endpoint creates a new user.
 
 ### HTTP Request
 
-`POST https://petssocialdev.herokuapp.com/v1/users`
+`POST https://endpoint/v1/users`
 
 ### Body Parameters
 
@@ -179,7 +174,7 @@ This endpoint logs in the user.
 
 ### HTTP Request
 
-`POST https://petssocialdev.herokuapp.com/v1/users/login`
+`POST https://endpoint/v1/users/login`
 
 ### Body Parameters
 
@@ -212,7 +207,7 @@ This endpoint logs out the user.
 
 ### HTTP Request
 
-`POST https://petssocialdev.herokuapp.com/v1/users/logout`
+`POST https://endpoint/v1/users/logout`
 
 
 
@@ -267,7 +262,7 @@ This endpoint gets a user by its id
 
 ### HTTP Request 
 
-`GET https://petssocialdev.herokuapp.com/v1/users/:id`
+`GET https://endpoint/v1/users/:id`
 
 ### URL Parameters 
 
@@ -307,7 +302,7 @@ This endpoint allows to update the user information. For now, only updating the 
 
 ### HTTP Request
 
-`PUT https://petssocialdev.herokuapp.com/v1/users`
+`PUT https://endpoint/v1/users`
 
 ### Body Parameters 
 
@@ -348,7 +343,7 @@ This endpoint allows to change the user's password
 
 ### HTTP Request 
 
-`POST https://petssocialdev.herokuapp.com/v1/users/changepassword`
+`POST https://endpoint/v1/users/changepassword`
 
 ### Body Parameters 
 
@@ -411,7 +406,7 @@ This endpoint allows to search and filter users.
 
 ### HTTP Request 
 
-`GET https://petssocialdev.herokuapp.com/v1/users/search`
+`GET https://endpoint/v1/users/search`
 
 ### Query Parameters 
 

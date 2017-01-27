@@ -29,6 +29,6 @@ This endpoint allows to get the main adds to be displayed in the app
 
 ### HTTP Request 
 
-`GET https://petssocialdev.herokuapp.com/v1/us`
+`GET https://endpoint/v1/us`
 
 
