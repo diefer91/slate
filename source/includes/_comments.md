@@ -109,3 +109,110 @@ id (r)| 8 | The identifier of the comment
 
 
 
+
+
+
+
+##Get Comments Feed 
+
+> Get Comments Feed JSON Response (200 - Ok): 
+
+```json
+{
+    "comments": [
+    {
+        "createdat": "2017-01-26 22:57:47",
+        "fromuser": {
+            "id": 1,
+            "thumbnailphotourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
+            "username": "diefer1"
+        },
+        "id": 1,
+        "post": {
+            "id": 1,
+            "thumbnailimageurl": "http:\/\/www.car-brand-names.com\/wp-content\/uploads\/2015\/04\/BMW-logo-2.jpg"
+        },
+        "text": "Sisaas",
+        "touser": 1
+    },
+    {
+        ...
+    }
+    ]
+}
+```
+
+This endpoint allows to get the comments feed of the logged in user 
+
+### HTTP Request 
+
+`GET https://endpoint/v1/comments/feed`
+
+### Query Parameters
+
+Parameter | Example | Description
+--------- | ------- | -----------
+count| 30 | The number of comments to be retrieved 
+offset | 60 | The comments position from where the new comments will be retrieved 
+
+
+
+
+
+
+
+
+
+##Get Comments of Post 
+
+> Get Comments of Post JSON Response (200 - Ok):
+
+```json
+{
+    "comments": [
+    {
+        "createdat": "2017-01-26 22:57:47",
+        "fromuser": {
+            "id": 1,
+            "thumbnailphotourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
+            "username": "diefer1"
+        },
+        "id": 1,
+        "post": 1,
+        "text": "Sisaas",
+        "touser": 1
+    },
+    {
+        ...
+    }
+    ]
+}
+```
+
+This endpoint allows to get the comments of a specific post 
+
+### HTTP Request 
+
+`GET https://endpoint/v1/comments/forpost/:id`
+
+### URL Parameters 
+
+Parameter | Example | Description
+--------- | ------- | -----------
+id| 3 | The id of the post you want to get the comments
+
+### Query Parameters 
+
+Parameter | Example | Description
+--------- | ------- | -----------
+count| 30 | The number of comments to be retrieved 
+offset | 60 | The comments position from where the new comments will be retrieved 
+
+
+
+
+
+
+
+
+

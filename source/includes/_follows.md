@@ -101,3 +101,139 @@ touser (r)| 8 | The identifier of the user to be unfollowed
 
 
 
+
+
+
+
+
+##Get Follow Feed
+
+> Get Follow Feed JSON Response (200 - Ok):
+
+```json
+{
+    "followers": [
+    {
+        "id": 2,
+        "thumbnailphotourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
+        "username": "diefer2"
+    },
+    {
+        ...
+    }
+    ]
+}
+```
+
+This endpoint allows to get the follow feed of the logged in user 
+
+### HTTP Request 
+
+`GET https://endpoint/v1/follows/feed`
+
+### Query Parameters 
+
+Parameter | Example | Description
+--------- | ------- | -----------
+count | 30 | The number of follows to be retrieved
+offset | 20 | the item position from where the new follows are going to be retrieved 
+
+
+
+
+
+
+
+
+
+##Get Followers 
+
+> Get Followers JSON Response (200 - Ok):
+
+```json
+{
+    "followers": [
+    {
+        "id": 2,
+        "name": "Ferch Illera",
+        "thumbnailphotourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
+        "username": "diefer2"
+    }
+    ],
+    {
+        ...
+    }
+}
+```
+
+This endpoints allows to get the followers of a specific user 
+
+### HTTP Request 
+
+`GET https://endpoint/v1/follows/followers/:id`
+
+### URL Parameters 
+
+Parameter | Example | Description
+--------- | ------- | -----------
+id | 3 | The id of the user you want to get the followers 
+
+### Query Parameters 
+
+Parameter | Example | Description
+--------- | ------- | -----------
+count | 30 | The number of follows to be retrieved
+offset | 20 | the item position from where the new follows are going to be retrieved 
+
+
+
+
+
+
+
+
+
+
+
+## Get Followings
+
+> Get Followings JSON Response (200 - Ok):
+
+```json
+{
+    "followings": [
+    {
+        "id": 2,
+        "name": "Ferch Illera",
+        "thumbnailphotourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
+        "username": "diefer2"
+    }
+    ],
+    {
+        ...
+    }
+}
+```
+
+This endpoint allows to get the users that a specific user is following 
+
+### HTTP Request 
+
+`GET https://endpoint/v1/follows/following/:id`
+
+### URL Parameters 
+
+Parameter | Example | Description
+--------- | ------- | -----------
+id | 3 | The id of the user you want to get the following users
+
+### Query Parameters 
+
+Parameter | Example | Description
+--------- | ------- | -----------
+count | 30 | The number of follows to be retrieved
+offset | 20 | the item position from where the new follows are going to be retrieved 
+
+
+
+
