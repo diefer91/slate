@@ -394,6 +394,54 @@ THE CLIENT MUST SEND THIS COOKIE IN ALL THE NEXT REQUESTS IT MADES, AS DISCUSSED
 </tr>
 </tbody></table>
 
+<h2 id="get-user-from-cookie">Get User From Cookie</h2>
+
+<blockquote>
+<p>Get User from Cookie JSON Response (200 - Ok):</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"createdat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-17 11:58:06"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"diefer_1@hotmail.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"followerscount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"followingids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"likedpostsids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ferch Illera"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"photourl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"thumbnailphotourl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"updatedat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-17 11:58:06"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"diefer3"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allows to get a user from a cookie</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://endpoint/v1/users/cookie</code></p>
+
+<h3 id="header-parameters">Header Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>cookie</td>
+<td>sdf86sdfdsf86f8</td>
+<td>The cookie of the user to be retrieved</td>
+</tr>
+</tbody></table>
+
 <h2 id="update-users">Update Users</h2>
 
 <blockquote>
