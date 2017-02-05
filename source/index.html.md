@@ -270,6 +270,68 @@ Parameter | Example | Description
 --------- | ------- | -----------
 id | 12 | The id of the user
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##Get User From Cookie 
+
+> Get User from Cookie JSON Response (200 - Ok):
+
+```json
+{
+    "user": {
+        "createdat": "2017-01-17 11:58:06",
+        "email": "diefer_1@hotmail.com",
+        "enabled": true,
+        "followerscount": 0,
+        "followingids": [
+
+        ],
+        "id": 1,
+        "likedpostsids": [
+
+        ],
+        "name": "Ferch Illera",
+        "photourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
+        "thumbnailphotourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
+        "updatedat": "2017-01-17 11:58:06",
+        "username": "diefer3"
+    }
+}
+```
+
+This endpoint allows to get a user from a cookie
+
+### HTTP Request
+
+`GET https://endpoint/v1/users/cookie`
+
+### Header Parameters 
+
+Parameter | Example | Description
+--------- | ------- | -----------
+cookie | sdf86sdfdsf86f8 | The cookie of the user to be retrieved
+
+
+
+
+
+
+
+
+
+
 ##Update Users 
 
 > Update User JSON Response (200 - Ok): 
