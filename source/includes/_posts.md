@@ -7,15 +7,14 @@
 ```json
 {
     "post": {
-        "averageImageColor": [
+        "averageimagecolor": [
             0,
             0,
             255
         ],
-        "commentersCount": 0,
+        "commenterscount": 0,
         "createdat": "2017-01-18 01:24:40",
         "description": "desss",
-        "enabled": true,
         "hashtags": [
             "#pomerania",
             "#labrador"
@@ -25,8 +24,12 @@
         "likersCount": 0,
         "thumbnailImageUrl": "http:\/\/www.car-brand-names.com\/wp-content\/uploads\/2015\/04\/BMW-logo-2.jpg",
         "type": "photo",
-        "updatedat": "2017-01-18 01:24:40",
-        "user_id": 1
+        "user_id": 1,
+        "userinfo": {
+            "name": "Diego",
+            "username": "diefer91", 
+            "thumbnailphotourl": null 
+        }
     }
 }
 ```
@@ -292,10 +295,11 @@ id | 12 | The id of the post
         "thumbnailImageUrl": "http:\/\/www.car-brand-names.com\/wp-content\/uploads\/2015\/04\/BMW-logo-2.jpg",
         "type": "photo",
         "updatedat": "2017-01-18 01:24:40",
-        "user_id": {
-            "id": 10,
+        "user_id": 1,
+        "userinfo": {
+            "username": diefer91,
             "name": "Diego Vidal",
-            "thumgnailphotourl": "http://www.google.com/image1.jpg"
+            "thumbnailphotourl": "http://www.google.com/image1.jpg"
         }
     }, 
     { 
