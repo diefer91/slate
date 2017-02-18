@@ -371,7 +371,7 @@ This endpoints allows to search for posts, can be filtered by hashtag.
 
 ### HTTP Request 
 
-`GET http://endpoint/v1/posts/search`
+`GET https://endpoint/v1/posts/search`
 
 ### Query Parameters 
 
@@ -382,6 +382,30 @@ offset | 100 | The post position from where the query will return posts
 hashtag | labrador | The hashtag to be used as a filter 
 
 
+
+
+
+
+
+
+
+
+##Get Presigned S3 Url 
+
+> Get PresigneUrl JSON Response (200 - Ok):
+
+```json
+{ 
+    "presignedurllarge": "https://sdfsdfsdfdf........",
+    "presignedurlthumbnail": "https://sdsdfsdfsdfsdf......"
+}
+```
+
+This endpoint allows to get the presigned urls to use to upload the large and thumbnail post images. 
+
+### HTTP Request 
+
+`GET https://endpoint/v1/posts/presignedurl`
 
 
 
