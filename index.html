@@ -623,15 +623,14 @@ THE CLIENT MUST SEND THIS COOKIE IN ALL THE NEXT REQUESTS IT MADES, AS DISCUSSED
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
     </span><span class="nt">"post"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"averageImageColor"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="nt">"averageimagecolor"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="mi">0</span><span class="p">,</span><span class="w">
             </span><span class="mi">0</span><span class="p">,</span><span class="w">
             </span><span class="mi">255</span><span class="w">
         </span><span class="p">],</span><span class="w">
-        </span><span class="nt">"commentersCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"commenterscount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="nt">"createdat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-18 01:24:40"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"desss"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="nt">"hashtags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="s2">"#pomerania"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"#labrador"</span><span class="w">
@@ -641,8 +640,12 @@ THE CLIENT MUST SEND THIS COOKIE IN ALL THE NEXT REQUESTS IT MADES, AS DISCUSSED
         </span><span class="nt">"likersCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="nt">"thumbnailImageUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:\/\/www.car-brand-names.com\/wp-content\/uploads\/2015\/04\/BMW-logo-2.jpg"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"photo"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"updatedat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-18 01:24:40"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="nt">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"userinfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Diego"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"diefer91"</span><span class="p">,</span><span class="w"> 
+            </span><span class="nt">"thumbnailphotourl"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w"> 
+        </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -942,10 +945,11 @@ so this endpoint sets the <code class="prettyprint">enable</code> flag of the po
         </span><span class="nt">"thumbnailImageUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:\/\/www.car-brand-names.com\/wp-content\/uploads\/2015\/04\/BMW-logo-2.jpg"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"photo"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"updatedat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-18 01:24:40"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"userinfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="err">diefer</span><span class="mi">91</span><span class="p">,</span><span class="w">
             </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Diego Vidal"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"thumgnailphotourl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.google.com/image1.jpg"</span><span class="w">
+            </span><span class="nt">"thumbnailphotourl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.google.com/image1.jpg"</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w"> 
     </span><span class="p">{</span><span class="w"> 
@@ -1023,7 +1027,7 @@ so this endpoint sets the <code class="prettyprint">enable</code> flag of the po
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://endpoint/v1/posts/search</code></p>
+<p><code class="prettyprint">GET https://endpoint/v1/posts/search</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1050,6 +1054,22 @@ so this endpoint sets the <code class="prettyprint">enable</code> flag of the po
 <td>The hashtag to be used as a filter</td>
 </tr>
 </tbody></table>
+
+<h2 id="get-presigned-s3-url">Get Presigned S3 Url</h2>
+
+<blockquote>
+<p>Get PresigneUrl JSON Response (200 - Ok):</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="nt">"presignedurllarge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://sdfsdfsdfdf........"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"presignedurlthumbnail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://sdsdfsdfsdfsdf......"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allows to get the presigned urls to use to upload the large and thumbnail post images. </p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://endpoint/v1/posts/presignedurl</code></p>
 
           <h1 id="likes">Likes</h1>
 
