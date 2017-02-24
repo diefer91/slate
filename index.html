@@ -1586,7 +1586,21 @@ so this endpoint sets the <code class="prettyprint">enable</code> flag of the po
 <p>Create Comment JSON Response (201 - Created): </p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Comment created successfully"</span><span class="w">
+    </span><span class="nt">"comment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"createdat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-24 23:30:42"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"fromuser"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"fromuserinfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ferch Illera"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"thumbnailphotourl"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"diefer_1"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"post"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"postinfo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sacissss"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"touser"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"touserinfo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
@@ -1757,18 +1771,20 @@ so this endpoint sets the <code class="prettyprint">enable</code> flag of the po
 <p>Get Comments of Post JSON Response (200 - Ok):</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-    </span><span class="nt">"comments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"createdat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-26 22:57:47"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"fromuser"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"thumbnailphotourl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"diefer1"</span><span class="w">
+    </span><span class="nt">"comments"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nt">"createdat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-24 23:30:42"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"fromuser"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"fromuserinfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ferch Illera"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"thumbnailphotourl"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"diefer_1"</span><span class="w">
         </span><span class="p">},</span><span class="w">
-        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
         </span><span class="nt">"post"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sisaas"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"touser"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="nt">"postinfo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sacissss"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"touser"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"touserinfo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
         </span><span class="err">...</span><span class="w">
