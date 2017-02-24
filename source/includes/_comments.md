@@ -6,7 +6,21 @@
 
 ```json
 {
-    "message": "Comment created successfully"
+    "comment": {
+        "createdat": "2017-02-24 23:30:42",
+        "fromuser": 1,
+        "fromuserinfo": {
+            "name": "Ferch Illera",
+            "thumbnailphotourl": null,
+            "username": "diefer_1"
+        },
+        "id": 12,
+        "post": 1,
+        "postinfo": null,
+        "text": "Sacissss",
+        "touser": 1,
+        "touserinfo": null
+    }
 }
 ```
 
@@ -169,18 +183,20 @@ offset | 60 | The comments position from where the new comments will be retrieve
 
 ```json
 {
-    "comments": [
-    {
-        "createdat": "2017-01-26 22:57:47",
-        "fromuser": {
-            "id": 1,
-            "thumbnailphotourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
-            "username": "diefer1"
+    "comments": [{
+        "createdat": "2017-02-24 23:30:42",
+        "fromuser": 1,
+        "fromuserinfo": {
+            "name": "Ferch Illera",
+            "thumbnailphotourl": null,
+            "username": "diefer_1"
         },
-        "id": 1,
+        "id": 12,
         "post": 1,
-        "text": "Sisaas",
-        "touser": 1
+        "postinfo": null,
+        "text": "Sacissss",
+        "touser": 1,
+        "touserinfo": null
     },
     {
         ...
