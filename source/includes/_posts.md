@@ -26,9 +26,10 @@
         "type": "photo",
         "user_id": 1,
         "userinfo": {
+            "id": 1 
             "name": "Diego",
             "username": "diefer91", 
-            "thumbnailphotourl": null 
+            "photourl": null 
         }
     }
 }
@@ -94,8 +95,14 @@ hashtags | [labrador, bogota] | The post hashtags
         "likersCount": 0,
         "thumbnailImageUrl": "http:\/\/www.car-brand-names.com\/wp-content\/uploads\/2015\/04\/BMW-logo-2.jpg",
         "type": "photo",
-        "updatedat": "2017-01-18 01:24:40",
-        "user_id": 1
+        "user_id": 1,
+        "userinfo": {
+            "id": 1 
+            "name": "Diego",
+            "username": "diefer91", 
+            "photourl": null 
+        }
+
     }
 }
 ```
@@ -357,6 +364,7 @@ offset | 100 | The post position from where the query will return posts
         "user_id": {
             "id": 10,
             "name": "Diego Vidal",
+            "username": "diefer91",
             "thumgnailphotourl": "http://www.google.com/image1.jpg"
         }
     }, 
@@ -379,7 +387,7 @@ Parameter | Example | Description
 --------- | ------- | -----------
 count | 30 | The number of posts to be retrieved
 offset | 100 | The post position from where the query will return posts 
-hashtag | labrador | The hashtag to be used as a filter 
+hashtag | labrador | The hashtag to be used as a filter - you can also send a username in this field (ej: @diefer91)
 
 
 
@@ -406,6 +414,141 @@ This endpoint allows to get the presigned urls to use to upload the large and th
 ### HTTP Request 
 
 `GET https://endpoint/v1/posts/presignedurl`
+
+
+
+
+
+
+
+
+
+
+##Get Posts of User 
+
+> Get Posts of User JSON Response When fulldetails = true (200 - Ok):
+
+```json
+{
+    "posts": [{
+        "averageImageColor": [
+            0,
+            0,
+            255
+        ],
+        "commentersCount": 0,
+        "createdat": "2017-01-18 01:24:40",
+        "description": "desss",
+        "hashtags": [
+            "#pomerania",
+            "#labrador"
+        ],
+        "id": 3,
+        "imageUrl": "http:\/\/www.car-brand-names.com\/wp-content\/uploads\/2015\/04\/BMW-logo-2.jpg",
+        "likersCount": 0,
+        "thumbnailImageUrl": "http:\/\/www.car-brand-names.com\/wp-content\/uploads\/2015\/04\/BMW-logo-2.jpg",
+        "type": "photo",
+        "user_id": {
+            "id": 10,
+            "name": "Diego Vidal",
+            "username": "diefer91",
+            "photourl": "http://www.google.com/image1.jpg"
+        }  
+    }, 
+    { 
+        ...
+    }
+    ]
+}
+```
+
+> Get Posts of User JSON Response When fulldetails = false (200 - Ok):
+
+```json
+{
+    "posts": [{
+        "id": 10,
+        "thumbnailimageurl": "http://asdasdasd...",
+        "averageImageColor": [
+            0,
+            0,
+            255
+        ]
+    },
+    {
+        "id": 10,
+        "thumbnailimageurl": "http://asdasdasd...",
+        "averageImageColor": [
+            0,
+            0,
+            255
+        ]
+    }
+    ]
+}
+```
+
+
+This endpoint allows to get the posts of a specific user. The posts can be retrieved as the thumbnail representation (used for cases where you only want to display the thumbnails), or as the full-details post. 
+
+### HTTP Requesrt 
+
+`GET https://endpoint/v1/posts/thumbnails` 
+
+### Query Parameters 
+
+Parameter | Example | Description
+--------- | ------- | -----------
+count | 30 | The number of posts to be retrieved
+offset | 100 | The post position from where the query will return posts 
+userid | 20 | the id of the user you want to get the posts 
+fulldetails | true/false | if true, all the details of the post will be retrieved. If false, or not provided, just the thumbnail representation of the post will be retrieved 
+
+
+
+
+
+
+
+
+
+##Get Posts Tagged With User 
+
+```json
+{
+    "posts": [{
+        "id": 10,
+        "thumbnailimageurl": "http://asdasdasd...",
+        "averageImageColor": [
+            0,
+            0,
+            255
+        ]
+    },
+    {
+        "id": 10,
+        "thumbnailimageurl": "http://asdasdasd...",
+        "averageImageColor": [
+            0,
+            0,
+            255
+        ]
+    }
+    ]
+}
+```
+
+This endpoint allows to get the posts where a specific user has been tagged 
+
+### HTTP Request 
+
+`GET https://endpoint/v1/posts/tagged/:username`
+
+Parameter | Example | Description
+--------- | ------- | -----------
+count | 30 | The number of posts to be retrieved
+offset | 100 | The post position from where the query will return posts 
+username | diefer91 | the username of the user
 
 
 

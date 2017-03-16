@@ -49,17 +49,13 @@ This cookie will be sent to the client in the header `set-cookie` in the respons
 ```json
 {
     "user": {
-        "createdat": "2017-01-17 13:51:44",
-        "email": "diefer_2@hotmail.com",
-        "enabled": true,
         "followerscount": 0,
         "followingids": null,
         "id": 6,
         "likedpostsids": null,
         "name": "Ferch Illera",
-        "photourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
-        "thumbnailphotourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
-        "updatedat": "2017-01-17 13:51:44",
+        "photourl": null,
+        "bannerphotourl": null,
         "username": "diefer1"
     }
 }
@@ -104,8 +100,6 @@ name (r)| Diego Vidal | Only alphabetic characters. Between 3 - 64 characters lo
 email (r)| diego@test.com | Must be a valid email. Between 6 - 64 characters long.
 password (r)| Abcd1234 | Require one numeric and one uppercase character. Between 3 - 18 characters long.
 username (r)| diego10 | Must contain only letters, numbers, and _-. Between 3 - 18 characters long.
-photourl | ....... | the url of the photo 
-thumbnailphotourl | ........ | the url of the thumbnail photo
 
 <aside class="success">
 If everything is ok, a new user must be created!
@@ -127,9 +121,6 @@ If everything is ok, a new user must be created!
 ```json
 {
     "user": {
-        "createdat": "2017-01-17 11:58:06",
-        "email": "diefer_1@hotmail.com",
-        "enabled": true,
         "followerscount": 0,
         "followingids": [
 
@@ -140,8 +131,7 @@ If everything is ok, a new user must be created!
         ],
         "name": "Ferch Illera",
         "photourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
-        "thumbnailphotourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
-        "updatedat": "2017-01-17 11:58:06",
+        "bannerphotourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
         "username": "diefer3"
     }
 }
@@ -219,16 +209,14 @@ This endpoint logs out the user.
 
 
 
-##Get User 
+##Get User  by Id
 
 > Get User JSON Response (200 - OK):
 
 ```json
 {
     "user": {
-        "createdat": "2017-01-17 11:58:06",
         "email": "diefer_1@hotmail.com",
-        "enabled": true,
         "followerscount": 0,
         "followingids": [
 
@@ -239,8 +227,7 @@ This endpoint logs out the user.
         ],
         "name": "Ferch Illera",
         "photourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
-        "thumbnailphotourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
-        "updatedat": "2017-01-17 11:58:06",
+        "bannerphotourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
         "username": "diefer3"
     }
 }
@@ -281,19 +268,13 @@ id | 12 | The id of the user
 
 
 
+##Get User  by Username
 
-
-
-##Get User From Cookie 
-
-> Get User from Cookie JSON Response (200 - Ok):
+> Get User JSON Response (200 - OK):
 
 ```json
 {
     "user": {
-        "createdat": "2017-01-17 11:58:06",
-        "email": "diefer_1@hotmail.com",
-        "enabled": true,
         "followerscount": 0,
         "followingids": [
 
@@ -304,8 +285,67 @@ id | 12 | The id of the user
         ],
         "name": "Ferch Illera",
         "photourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
-        "thumbnailphotourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
-        "updatedat": "2017-01-17 11:58:06",
+        "bannerphotourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
+        "username": "diefer3"
+    }
+}
+```
+
+> Get User JSON Response (404 - Not Found): 
+
+```json
+{
+    "error": {
+        "code": "get-user-1",
+        "description": "Could not find a user with the specified id",
+        "message": "No user found"
+    }
+}
+```
+
+This endpoint gets a user by its username
+
+### HTTP Request 
+
+`GET https://endpoint/v1/users/username/:username`
+
+### URL Parameters 
+
+Parameter | Example | Description
+--------- | ------- | -----------
+username | diefer_91 | The username of the user
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##Get User From Cookie 
+
+> Get User from Cookie JSON Response (200 - Ok):
+
+```json
+{
+    "user": {
+        "followerscount": 0,
+        "followingids": [
+
+        ],
+        "id": 1,
+        "likedpostsids": [
+
+        ],
+        "name": "Ferch Illera",
+        "photourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
+        "bannerphotourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
         "username": "diefer3"
     }
 }
@@ -339,9 +379,6 @@ cookie | sdf86sdfdsf86f8 | The cookie of the user to be retrieved
 ```json
 {
     "user": {
-        "createdat": "2017-01-17 11:58:06",
-        "email": "diefer_1@hotmail.com",
-        "enabled": true,
         "followerscount": 0,
         "followingids": [
 
@@ -352,8 +389,7 @@ cookie | sdf86sdfdsf86f8 | The cookie of the user to be retrieved
         ],
         "name": "Ferch Illera",
         "photourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
-        "thumbnailphotourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
-        "updatedat": "2017-01-17 11:58:06",
+        "bannerphotourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
         "username": "diefer3"
     }
 }
@@ -371,7 +407,8 @@ This endpoint allows to update the user information. For now, only updating the 
 Parameter | Example | Description
 --------- | ------- | -----------
 name | diego vidal | The updated name of the user
-
+photourl | htttps://asdasd.... | the new photo url 
+bannerphotourl | https://sdfsdf.. | the new banner url
 
 
 
@@ -426,8 +463,6 @@ newpassword | Dfghj5893 | The new password of the user
 ```json
 {
     "users": [{
-        "createdat": "2017-01-17 11:58:06",
-        "email": "diefer_1@hotmail.com",
         "enabled": true,
         "followerscount": 0,
         "followingids": [
@@ -439,14 +474,10 @@ newpassword | Dfghj5893 | The new password of the user
         ],
         "name": "Ferch Illera",
         "photourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
-        "thumbnailphotourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
-        "updatedat": "2017-01-17 11:58:06",
+        "bannerphotourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
         "username": "diefer3"
     },
     {
-        "createdat": "2017-01-17 11:58:06",
-        "email": "diefer_1@hotmail.com",
-        "enabled": true,
         "followerscount": 0,
         "followingids": [
 
@@ -457,8 +488,7 @@ newpassword | Dfghj5893 | The new password of the user
         ],
         "name": "Ferch Illera",
         "photourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
-        "thumbnailphotourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
-        "updatedat": "2017-01-17 11:58:06",
+        "bannerphotourl": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/a\/a3\/Audi_Logo.svg\/220px-Audi_Logo.svg.png",
         "username": "diefer3"
     }]
 }
@@ -476,5 +506,37 @@ Parameter | Example | Description
 --------- | ------- | -----------
 count | 20 | The numbers of items to be retrieved 
 offset | 10 | The item from which the results are going to be sent
-username | diefer1 | the username to use as a filter
+username | diefer1 | the username to use as a filter - you can search things like @diefer91, or Diego Vidal, for example
+
+
+
+
+
+
+
+
+
+
+##Presigned URL 
+
+> Presigned URL JSON Response (200 - Ok):
+
+```json
+{
+    "presignedurl": "https://asdasdasdasdasd........"
+}
+```
+
+This endpoint allows to get the Amazon S3 Presigned Urls to use for uploading a profile or banner image 
+
+### HTTP Request 
+
+`GET https://endpoint/v1/users/presignedurl`
+
+### Query Parameters 
+
+Parameter | Example | Description
+--------- | ------- | -----------
+type | profile | Can be profile or banner, depending on which image the user wants to upload 
+
 
