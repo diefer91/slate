@@ -674,6 +674,21 @@ THE CLIENT MUST SEND THIS COOKIE IN ALL THE NEXT REQUESTS IT MADES, AS DISCUSSED
 </tr>
 </tbody></table>
 
+<h2 id="disable-user">Disable User</h2>
+
+<blockquote>
+<p>Disable User JSON Response (200 - Ok);</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User deleted successfully"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allows to disable a user (used for &ldquo;deleting&rdquo; user accounts&hellip;). This endpoint also disables the posts of the user</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST https://endpoint/v1/users/disable</code></p>
+
           <h1 id="posts">Posts</h1>
 
 <h2 id="create-post">Create Post</h2>
@@ -2086,6 +2101,39 @@ so this endpoint sets the <code class="prettyprint">enable</code> flag of the po
 <h3 id="http-request">HTTP Request</h3>
 
 <p><code class="prettyprint">GET https://endpoint/v1/us</code></p>
+
+          <h1 id="password-recovery-request">Password Recovery Request</h1>
+
+<h2 id="create-password-recovery-request">Create Password Recovery Request</h2>
+
+<blockquote>
+<p>Create Recovery Request JSON Response (200 - Ok):</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Password recovery created successfully! An email has been sent to your account with the instructions to recover your password"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allows to create a password recovery request </p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST https://endpoint/v1/passwordrecoveryrequests</code></p>
+
+<h3 id="body-parameter">Body parameter</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email &reg;</td>
+<td>diefer_91@hotmail.com</td>
+<td>The email of the user that wants to recover the password</td>
+</tr>
+</tbody></table>
 
           <h1 id="http-status-codes">HTTP Status Codes</h1>
 
