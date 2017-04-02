@@ -11,6 +11,7 @@ includes:
   - follows
   - comments
   - mainadds
+  - passwordrecovery
   - errors
 
 search: true
@@ -538,5 +539,35 @@ This endpoint allows to get the Amazon S3 Presigned Urls to use for uploading a 
 Parameter | Example | Description
 --------- | ------- | -----------
 type | profile | Can be profile or banner, depending on which image the user wants to upload 
+
+
+
+
+
+
+
+
+
+
+
+
+##Disable User 
+
+> Disable User JSON Response (200 - Ok);
+
+```json
+{
+    "message": "User deleted successfully"
+}
+```
+
+This endpoint allows to disable a user (used for "deleting" user accounts...). This endpoint also disables the posts of the user
+
+### HTTP Request 
+
+`POST https://endpoint/v1/users/disable`
+
+
+
 
 
